@@ -2,15 +2,15 @@ package com.gontuseries.hellocontroller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.portlet.ModelAndView;
+import org.springframework.web.servlet.ModelAndView;
+
 
 @Controller
 public class HelloController{
 	
-	@RequestMapping("/welcome.html")
-	public ModelAndView helloworld(){
-		ModelAndView model =new ModelAndView("HelloPage");
-		model.addObject("welcomeMessage","Hello World");
-		return model;
+	@RequestMapping("/")
+	public ModelAndView  helloworld(){
+		System.out.println("Call Init");
+		return new ModelAndView("HelloPage");
 	}
 }
